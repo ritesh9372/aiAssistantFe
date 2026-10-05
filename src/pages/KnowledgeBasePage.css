@@ -1,0 +1,212 @@
+.kb-page {
+  padding: 4px;
+}
+
+.brand-selector-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.brand-tab {
+  border: 1px solid #e2e8f0;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 200px;
+  transition: all 0.15s ease;
+}
+
+.brand-tab strong {
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.brand-tab span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.brand-tab:hover {
+  background: #f8fafc;
+}
+
+.brand-tab.active {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+
+.brand-tab.active strong {
+  color: #4338ca;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.policy-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.policy-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.policy-category-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.category-refund {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.category-return {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.category-shipping {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.category-cancellation {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.policy-card-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-icon {
+  background: none;
+  border: 1px solid #e2e8f0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-icon:hover {
+  background: #f1f5f9;
+}
+
+.btn-icon.delete:hover {
+  background: #fee2e2;
+}
+
+.policy-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.policy-card-content {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #334155;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.policy-card-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* Modal */
+
+.kb-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.kb-modal {
+  background: white;
+  width: 90%;
+  max-width: 520px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.kb-modal h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: #0f172a;
+}
+
+.modal-sub {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13.5px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
