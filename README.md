@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+﻿# AI CX Reply Assistant — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend application for the AI-Powered Customer Experience (CX) Reply Assistant, built with **React**, **TypeScript**, and **Vite**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
+- **Framework:** React 18 + TypeScript
+- **Bundler / Dev Server:** Vite
+- **Routing:** React Router v7
+- **Styling:** Modular CSS
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Features Built
 
-## Expanding the ESLint configuration
+### 1. Conversation Studio (/conversation)
+- **Conversation List:** Real-time customer list displaying customer names, brands, priority badges (High/Medium/Low), and ticket status.
+- **Conversation Thread:** Complete message history with timestamps, sender tags (customer vs gent), and customer order context (Order ID, Item, Delivery status, Amount in ₹).
+- **Persona Switcher:** Toggle between [👤 Customer Mode] (to test sending customer inquiries) and [🎧 Agent Mode] (to generate, review, and send AI-assisted replies).
+- **AI Reply Assistant Panel:**
+  - **Intent & Sentiment Detection:** Displays classified intent (e.g., *Refund Request*) and customer sentiment (*Neutral, Frustrated, Positive*).
+  - **Knowledge Used:** Displays exact retrieved Knowledge Base articles and policy snippets grounded in the brand's rules.
+  - **Editable Draft Area:** A human-in-the-loop review textarea allowing the agent to edit the AI draft before sending.
+  - **Agent Actions:**
+    - [✨ Generate Reply] / [↻ Regenerate]
+    - [📋 Copy Reply] (copies to clipboard with toast notification)
+    - [📤 Send to Customer] (appends message directly to thread)
+    - Direct manual messaging independent of AI.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Brand Knowledge Base Management (/knowledge-base)
+- Brand selector (e.g. Apex Retail, GlowBotanics Skincare).
+- Full in-app CRUD interface: Create, Edit, and Delete policy documents per brand in real-time.
+- Changes immediately affect AI response grounding without touching code or database.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 3. Dashboard (/)
+- Overview metrics showing Total Conversations, Pending Tickets, Resolved Conversations, and AI-assisted replies.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
 
-```
+### 1. Install Dependencies
+`ash
+npm install
+`
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Configure Environment
+Create a .env file (copied from .env.example):
+`env
+VITE_API_URL=http://localhost:3000/api
+`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. Run Development Server
+`ash
+npm run dev
+`
+Runs at: http://localhost:5173
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+### 4. Build for Production
+`ash
+npm run build
+`
